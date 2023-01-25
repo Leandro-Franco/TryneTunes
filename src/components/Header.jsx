@@ -17,7 +17,6 @@ export default class Header extends Component {
 
   render() {
     const { loadingStatus, UserName } = this.state;
-    console.log(loadingStatus);
     if (loadingStatus) {
       return (
         <header>
@@ -26,8 +25,8 @@ export default class Header extends Component {
       );
     }
     return (
-      <header testid="header-component">
-        <h3>
+      <header data-testid="header-component">
+        <h3 data-testid="header-user-name">
           { UserName }
         </h3>
         <Link data-testid="link-to-search" to="/search">Search</Link>
