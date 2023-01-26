@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 
-export default class login extends Component {
+export default class Login extends Component {
   state = {
     user: '',
     loadingStatus: false,
