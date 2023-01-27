@@ -12,7 +12,6 @@ export default class Login extends Component {
 
   confirmLogin = async () => {
     const { user } = this.state;
-    console.log(user);
     this.setState({ loadingStatus: true });
     await createUser({ name: user });
     this.setState({

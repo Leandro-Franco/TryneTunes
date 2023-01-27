@@ -26,7 +26,8 @@ export default class SearchAlbum extends Component {
   };
 
   render() {
-    const { loadingStatus, artist, artistResult, albums, trySearch } = this.state;
+    const { loadingStatus, artist, artistResult,
+      albums, trySearch } = this.state;
     const searchLength = 2;
     if (loadingStatus) {
       return (
