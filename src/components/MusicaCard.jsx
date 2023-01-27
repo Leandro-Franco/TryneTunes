@@ -49,10 +49,11 @@ export default class MusicaCard extends Component {
         <audio data-testid="audio-component" src={ song.previewUrl } controls>
           <track kind="captions" />
         </audio>
-        <label htmlFor="Favorita" data-testid={ `checkbox-music-${song.trackId}` }>
+        <label htmlFor="Favorita">
           {loadingCheck ? 'Carregando...' : 'Favorita'}
           <input
             type="checkbox"
+            data-testid={ `checkbox-music-${song.trackId}` }
             checked={ favorita }
             onChange={ () => this.changeFavorite(song) }
           />
