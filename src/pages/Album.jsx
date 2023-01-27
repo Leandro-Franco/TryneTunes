@@ -19,7 +19,6 @@ export default class Album extends Component {
 
   renderAlbum = async () => {
     const { match: { params: id } } = this.props;
-    console.log(id);
     const list = await getMusics(id.id);
     console.log(list);
     this.setState({
@@ -45,12 +44,12 @@ export default class Album extends Component {
         <h2 data-testid="artist-name">{artistName}</h2>
         {/* https://stackoverflow.com/questions/60411755/js-react-map-method-filter-on-element-index-only-run-if-index-meets-condi */}
         {album
-          .filter((el, i) => (i > 0))
+          // .slice(1)
+          .filter((el, ind) => (ind > 0))
           .map((song) => (
             <MusicaCard
-              key={ song.artistId }
-              trackName={ song.trackName }
-              previewUrl={ song.previewUrl }
+              key={ song.artistiName }
+              song={ song }
             />
           ))}
       </div>
