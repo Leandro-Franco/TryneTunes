@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
-// import Loading from './Loading';
 
 export default class MusicaCard extends Component {
   state = {
     loadingCheck: false,
     favorita: false,
-    // favoriteList: [],
   };
 
   async componentDidMount() {
     const { song: { trackId } } = this.props;
-    // const { tracksId } = song;
     this.setState({ loadingCheck: true });
     const favoriteList = await getFavoriteSongs();
     if (favoriteList.some((song) => song.trackId === trackId)) {
